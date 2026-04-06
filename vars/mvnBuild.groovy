@@ -1,3 +1,4 @@
-def call(){
-    sh 'mvn clean install -DskipTests'
+def call() {
+    def mvnHome = tool name: 'maven3', type: 'maven'
+    sh "${mvnHome}/bin/mvn clean test"
 }
