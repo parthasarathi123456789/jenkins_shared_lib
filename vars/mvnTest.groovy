@@ -1,3 +1,4 @@
-def call(){
-    sh 'mvn test'
+def call() {
+    def mvnHome = tool name: 'maven3', type: 'maven'
+    sh "${mvnHome}/bin/mvn clean test"
 }
